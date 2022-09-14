@@ -4,7 +4,8 @@
             open -> process -> close
             
 ## What are the standard file descriptor and what are they used for?
-- standard file descriptor: file descriptor of special files use to handle I/O resources
+- standard file descriptor: file descriptor of special files use to handle I/O
+  resources
  
 ## What is a buffer?
 - buffer: 
