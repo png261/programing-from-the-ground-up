@@ -4,6 +4,8 @@
 - Von Neumann architecture divides computer into two main parts:
     - CPU(Central Processing Unit)
     - Memory
+    
+![von neumann architecture](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Von_Neumann_Architecture.svg/2560px-Von_Neumann_Architecture.svg.png)
 
 ## Structure of Computer Memory
 - a numbered sequence of fixed-size storage locations
@@ -11,7 +13,7 @@
 - each location has the same, fixed-length size and store only single number
 
 ## The CPU
-- CPU funtion: reads in instructions from memory one at a time and executes
+- CPU function: reads in instructions from memory one at a time and executes
   theme. It's is fetch-execute cycle
  
 - CPU contains elements to accomplish: 
