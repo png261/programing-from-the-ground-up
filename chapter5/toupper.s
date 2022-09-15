@@ -181,8 +181,8 @@ end_loop:
     int $LINUX_SYSCALL
 
     # exit
-    movl $SYS_EXIT, %eax
-    movl $0, %ebx                   # return 0
+    movl $SYS_EXIT, %eax            # exit(%ebx: exit number)
+    movl $0, %ebx                   # exit number
     int $LINUX_SYSCALL
 
 
