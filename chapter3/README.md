@@ -1,21 +1,21 @@
 # Chapter3: Your firsrt programs
 
 - Assembling is the process that transforms assembly code into intructions for
-  the machine. It transforms the human-readable file into a machine-readable file 
+  the machine(object file). 
 - Object file is code that is in the machine's language, but has not been completely put together
-- Linker is a program responsile for putting the object files together and
-  adding information to it so that the kernel knows how to load and run it
+- Linker is a program putting object files together and adding information to it so that the kernel knows how to load and run it
  
 # Outline of an Assembly Language Program
 - anything starting with a period isn't directly translated into a machine
-  instruction. Instead, it's an instruction to the assembler it self
+  instruction. Instead, it's an instruction to the assembler it self. These are called assembler directives or pseudo-operations
 - `.section .data`: where to list memory storage you need 
 - `.section .text`: where the program instructions live
 - symbol are generally used to mark locations of programs or data, so you can
   refer them by name instead of by their location number
-- symbol is going going to be replaced by something else either during assembly or liking
-- _start mark location where to begin running program
-- label: symbol followed by a colon, define a symbol's value
+- symbol is going to be replaced by something else either during assembly or liking
+- `.globl _start`: define lable `_start` which can be accessible from outside the current file 
+- `_start:` mark location begin running program
+- `label:` symbol followed by a colon, define a symbol's value
 - some general-purpose registers
     - %eax
     - %ebx
@@ -38,6 +38,7 @@
      ```
      movl 1, %eax
      ```
+ 
 ## Addressing Modes
 ```
 ADDRESS_OR_OFFSET(%BASE_OR_OFFSET,%INDEX,MULTIPLIER)
