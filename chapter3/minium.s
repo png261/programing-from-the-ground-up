@@ -2,30 +2,32 @@
 # PURPOSE: This program finds the maximum number of a set of data items.
 #
 # VARIABLES: The registers have the following uses:
-# %edi - index
-# %ebx - largest number
+# %edi - address of current items
+# %ebx - smallest number 
 # %eax - current number
 #
 # The following memory locations are used:
 # data_items - contains the item data. A 0 is used to terminate the data
+# end_data_items: ending address
 #
 
 .section .data
 data_items:
-    .long 3,67,34,222,45,75,54,34,44,33,22,11,66
+    .long 2,3,5,4,0,1
+end_data_items:
 
 .section .text
 .globl _start
 _start:
-    movl $0, %edi
-    movl data_items(, %edi, 4), %eax
-    movl %eax, %ebx
+    movl $data_items, %edi # %edi = address of list
+    movl (%edi), %eax # get data at %edi address then move to %eax
+    movl %eax, %ebx # move %eax to %ebx: %ebx = %eax = 2
     
 start_loop:
-    incl %edi
-    movl data_items(, %edi, 4), %eax
-    cmpl $0, %eax
-    jle loop_exit
+    addl $4, %edi # +4 byte to the next item, 1 long has 4 byte
+    cmpl $end_data_items, %edi # compare current address and ending address
+    movl (%edi), %eax 
+    je loop_exit
 
     cmpl %ebx, %eax
     jge start_loop
