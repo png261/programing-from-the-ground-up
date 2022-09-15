@@ -11,7 +11,7 @@
   instruction. Instead, it's an instruction to the assembler it self
 - `.section .data`: where to list memory storage you need 
 - `.section .text`: where the program instructions live
-- symbol are generally used to makr locations of programs or data, so you can
+- symbol are generally used to mark locations of programs or data, so you can
   refer them by name instead of by their location number
 - symbol is going going to be replaced by something else either during assembly or liking
 - _start mark location where to begin running program
@@ -114,4 +114,18 @@ movl $_start, %eax
 it move the address number to %eax
 
 ## Going further
+### 1. Modify the first program to leave off the int instruction line. Aseemble, link and execute the new program. What error message do you get. Why do you think this might be?
+- error message: Segmentation fault(core dumped)
+- A segmentation fault occurs when a program attempts to access a memory location that it is not allowed to access, or attempts to access a memory location in a way that is not allowed
+ 
+```
+movl $1, %eax
+int $0x80
+```
+- system call exit to terminate our program
+- without int instruction line, system call exit can't be executed so our
+  program continue running and access invalid memory
 
+### 2. So far, we have discussed three approaches to finding the end of the list....
+- I think using ending address is the best because you needn't care about the
+  length count, or special number wrong case when we add new items
