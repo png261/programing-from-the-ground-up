@@ -61,6 +61,7 @@
 .equ ST_ARGV_0, 4   # name of program (./toupper)
 .equ ST_ARGV_1, 8   # input pathname (input.txt) 
 .equ ST_ARGV_2, 12  # output pathname (output.txt)
+.equ NUMBER_ARGS, 3
 
 
 .globl _start
@@ -86,7 +87,7 @@ movl %esp, %ebp
 subl $ST_SIZE_RESERVE, %esp 
 
 # check if argc == 3: have input and output file
-cmpl $3, ST_ARGC(%ebp)
+cmpl $NUMBER_ARGS, ST_ARGC(%ebp)
 je open_files
 
 # read STDIN and store in STDOUT
