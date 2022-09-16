@@ -169,4 +169,4 @@ as the cycle completes.
 - Variabl-length: reduces the memory space required, flexible, but required multi-step
   fetch and decode 
 
-<details>
+</details>
