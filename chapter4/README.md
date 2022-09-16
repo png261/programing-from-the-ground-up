@@ -1,5 +1,8 @@
-# Chapter4: All about function
+# Chapter 4: All about function
+<details>
+<summary>Notes</summary>
 
+# Notes
 ## Dealing with complexity
 - function: units of code, do a defined piece of work on specified types of data
 - parameters: data items function are given to process
@@ -162,6 +165,11 @@
         popl %ebp
         ret
     ```
+</details>
+
+<details>
+<summary>Review</summary>
+
 # Review
 ## Know the concepts
 ### 1. What are primitives?
@@ -213,3 +221,6 @@
 ### 2. Can you build a calling convention without using the stack? What limitations might it have? 
 
 ### 3. What test cases should we use in our example program to check to see if it is working properly
+</details>
+
+
