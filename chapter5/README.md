@@ -1,6 +1,9 @@
 # Chapter 5: Dealing with Files
-
-```
+<details>
+  <summary>Notes</summary>
+  
+ # Notes
+  ```
 After all, when we reboot our computers, the only thing that remains from
 previous sessions are the things that have been put on disk
 ```
@@ -44,7 +47,7 @@ previous sessions are the things that have been put on disk
 ```
 - `.lcomm` create symbol `my_buffer` refers to a 500-bytes storage location that we can use as a buffer   
  
-# Standard and special files
+## Standard and special files
 
 - STDIN: 
     - standard input
@@ -77,7 +80,11 @@ previous sessions are the things that have been put on disk
     - the result is usually returned in %eax register.
      
 - `constants` is a value that is assigned when a program assembles or complie and never change
+</details>
 
+<details>
+  <summary>Review</summary>
+  
 # Review
 ## Know the concepts
 ### 1.Describe the life cycle of a file descriptor?
@@ -131,3 +138,5 @@ see in man page 2
     toupper-argc.s
 ### 4. Modify the program so that it checks the results of each system call, and prints out an error message to STDOUT when it occurs.
     toupper-error.s
+
+</details>
