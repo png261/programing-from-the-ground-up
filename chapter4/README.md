@@ -34,8 +34,14 @@
     - main method of transferring data back to the main program
     - most programming languages only allow a single return value for a function 
      
-- language's calling convention: the way variables are stored and the
+- language's calling convention: a standardized medthod for function to be implemented and called by machine. The way variables are stored and the
   parameters and return values are transferred by the computer
+- calling convention specify how arguemtns are passed to a function, how return
+  value are passed back out of a function, how the function is called, and how
+  the function manages the stack and it stacks frame. In short the calling
+  convention specifies how a function call in C or C++ is converted into
+  assembly language
+- more about [calling conventions](https://en.wikibooks.org/wiki/X86_Disassembly/Calling_Conventions)
 - C calling convention is the standard for Linux platforms
  
 ## Assembly-language functions using the C calling convention
@@ -47,7 +53,7 @@
       functon's local variables, parameters, and return address.
  
 - `pushl`: push register or memory values onto the top of the stack 
-- `pop`: pop values off the top save it into memory location or register
+- `popl`: pop values off the top save it into memory location or register
 - stack pointer `%esp`: point to the top of stack change when `pushl` or `popl`
  
 
@@ -156,3 +162,54 @@
         popl %ebp
         ret
     ```
+# Review
+## Know the concepts
+### 1. What are primitives?
+- basic thing which everything build off of
+### 2. What are calling conventions?
+- language's calling convention: a standardized medthod for function to be implemented and called by machine. The way variables are stored and the
+  parameters and return values are transferred by the computer
+- calling convention specify how arguemtns are passed to a function, how return
+  value are passed back out of a function, how the function is called, and how
+  the function manages the stack and it stacks frame. In short the calling
+  convention specifies how a function call in C or C++ is converted into
+  assembly language
+- more about [calling conventions](https://en.wikibooks.org/wiki/X86_Disassembly/Calling_Conventions)
+- C calling convention is the standard for Linux platforms
+### 3. What is the stack?
+- `stack`: 
+    - region of memory function uses to work properly
+    - computer's stack lives at the very top addresses of memory
+    - grows downward from the top of memory
+    - In C calling convention, the stack is the key element for implementing a
+      functon's local variables, parameters, and return address.
+### 4. How do `pushl` and `popl` affect the stack? What special-purpose register do they affect?
+- `pushl`: push register or memory values onto the top of the stack 
+- `popl`: pop values off the top save it into memory location or register
+- they affect to stack pointer(%esp):
+    - `pushl`: increment stack pointer  
+    - `popl`: decrement stack pointer  
+### 5. What are local variables and what they used for?
+- local variable
+### 6. Why are local variables so necessary in recursive functions 
+- local variables: data storage that a function uses while processing, thrown away when function finished
+### 7. What are %ebp and %esp used for?
+- %ebp: base pointer use to access data with addressing mode
+- %esp: stack pointer use to store data, it always point to next physical memory address
+### 8. What is stack frame?
+- stack frame: storage consists of all the stack variables used within a funtion: 
+    - arguments
+    - local variables
+    - return address 
+
+## Use the concepts
+### 1.Explain the problems that would arise without a standard calling convention?
+- it would be nearly impossible for programs created using different compliers
+  to communicate and interact with one another
+
+## Going further
+### 1.Do you think it's better for a system to have a large set of primitives or a small one, assuming that the larger set can be written in terms of the smaller one?
+- I think have a small one is better. A primitive should do only one function 
+### 2. Can you build a calling convention without using the stack? What limitations might it have? 
+
+### 3. What test cases should we use in our example program to check to see if it is working properly
