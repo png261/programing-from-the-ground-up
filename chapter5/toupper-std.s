@@ -1,10 +1,10 @@
 # Run(x86-64):
-#   as --32 toupper.s -o toupper.o
-#   ld -melf_i386 toupper.o -o toupper
-#   echo "hello there" | ./toupper 
+#   as --32 toupper-std.s -o toupper-std.o
+#   ld -melf_i386 toupper-std.o -o toupper-std
+#   echo "hello there" | ./toupper-std 
 #   HELLO THERE
-# or do something more cool:
-#    journalctl | ./toupper 
+# or do something cool:
+#    journalctl | ./toupper-std 
 
 
 # PURPOSE: uppercase content of STDIN and store it in STDOUT

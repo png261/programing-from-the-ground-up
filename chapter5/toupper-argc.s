@@ -1,9 +1,3 @@
-# Run(x86-64):
-#   as --32 toupper.s -o toupper.o
-#   ld -melf_i386 toupper.o -o toupper
-#   ./toupper toupper.s uppercase.txt
-
-
 # PURPOSE: uppercase content of input file and store to output file  
 #
 # PROCESS:
@@ -14,7 +8,6 @@
 #   3.b. go through each byte of memory: convert_to_upper()
 #   3.c. write the memory buffer to output file
 # 4. close files and exit
-
 
 .section .data
 

@@ -1,10 +1,3 @@
-
-# Run(x86-64):
-#   as --32 toupper.s -o toupper.o
-#   ld -melf_i386 toupper.o -o toupper
-#   ./toupper toupper.s uppercase.txt
-
-
 # PURPOSE: uppercase content of input file and store to output file  
 #
 # PROCESS:
