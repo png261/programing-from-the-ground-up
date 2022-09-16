@@ -1,11 +1,14 @@
 # Chapter3: Your firsrt programs
+<details>
+<summary>Notes</summary>
 
+# Notes
 - Assembling is the process that transforms assembly code into intructions for
   the machine(object file). 
 - Object file is code that is in the machine's language, but has not been completely put together
 - Linker is a program putting object files together and adding information to it so that the kernel knows how to load and run it
  
-# Outline of an Assembly Language Program
+## Outline of an Assembly Language Program
 - anything starting with a period isn't directly translated into a machine
   instruction. Instead, it's an instruction to the assembler it self. These are called assembler directives or pseudo-operations
 - `.section .data`: where to list memory storage you need 
@@ -47,6 +50,12 @@ FINAL ADDRESS = ADDRESS_OR_OFFSET + %BASE_OR_OFFSET + MULTIPLIER * %INDEX
 ```
 ADDRESS_OR_OFFSET and MULTIPLIER must both be constants, while the other two must be
 registers. If any of the pieces is left out, it is just substituted with zero in the equation.
+
+</details>
+
+<details>
+<summary>Review</summary>
+
 
 # Review
 ## Know the Concepts
@@ -130,3 +139,5 @@ int $0x80
 ### 2. So far, we have discussed three approaches to finding the end of the list....
 - I think using ending address is the best because you needn't care about the
   length count, or special number wrong case when we add new items
+  
+  </details>
