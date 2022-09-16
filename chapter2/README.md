@@ -70,6 +70,10 @@
     - base poiter addressing mode: similar to indierct addressing, but also
       include a number called offset to add the register's value before using
       it for look up
+</details>
+
+<details>
+<summary>Review</summary>
 
 # Review
 
