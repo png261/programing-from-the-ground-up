@@ -1,5 +1,8 @@
 # Chapter 2: Computer Architecture
+<details>
+<summary>Notes</summary>
 
+# Notes
 - Mordern computer architecture based off of Von Neumann architecture.
 - Von Neumann architecture divides computer into two main parts:
     - CPU(Central Processing Unit)
@@ -162,3 +165,4 @@ as the cycle completes.
 - Variabl-length: reduces the memory space required, flexible, but required multi-step
   fetch and decode 
 
+<details>
