@@ -43,7 +43,7 @@
 
 .section .bss 
 # BUFFER: save data from file before process: 
-#       input -> *buffer* -> process:convert_to_upper() -> output 
+#       input -> *buffer* -> process:convert_to_upper() -> save to output file 
 
 .equ BUFFER_SIZE, 500 
 # create symbol BUFFER_DATA: address of BUFFER_SIZE bytes storage location 
