@@ -1,7 +1,9 @@
 ASFLAGS=-gstabs -32
 LDLIBS=-m elf_i386
 
-all: toupper toupper-argc toupper-bss toupper-error toupper-std heynow
+BINARY= toupper toupper-argc toupper-bss toupper-error toupper-std heynow
+
+all: $(BINARY)
 
 toupper: toupper.o
 	$(LD) -o $@ $? $(LDLIBS)
@@ -34,6 +36,6 @@ heynow: heynow.o
 
 
 clean:
-	-rm -rf *.o toupper toupper-argc toupper-bss toupper-error toupper-std heynow
+	-rm -rf *.o $(BINARY)
 
 .PHONEY: clean all

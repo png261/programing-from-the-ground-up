@@ -1,7 +1,9 @@
 ASFLAGS=-gstabs -32
 LDLIBS=-m elf_i386
 
-all: write-record read-record add-year
+BINARY = write-record read-record add-year largest-age
+
+all: $(BINARY)
 
 write-record: write-record.o write-records.o
 	$(LD) -o $@ $? $(LDLIBS)
@@ -28,6 +30,6 @@ largest-age: read-record.o largest-age.o
 
 
 clean:
-	-rm -rf *.o read-record write-record add-year largest-age
+	-rm -rf *.o $(BINARY)
 
 .PHONEY: clean all

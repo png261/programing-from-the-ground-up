@@ -1,7 +1,9 @@
 ASFLAGS=-gstabs -32
 LDLIBS=-m elf_i386
 
-all: exit maxium minium
+BINARY = write-record read-record add-year largest-age
+
+all: $(BINARY)
 
 exit: exit.o
 	$(LD) -o $@ $? $(LDLIBS)
@@ -24,6 +26,6 @@ minium: minium.o
 
 
 clean:
-	-rm -rf *.o exit maxium minium
+	-rm -rf *.o $(BINARY)
 
 .PHONEY: clean all

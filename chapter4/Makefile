@@ -1,7 +1,9 @@
 ASFLAGS=-gstabs -32
 LDLIBS=-m elf_i386
 
-all: factorial factorial_not_recursive power square 
+BINARY = factorial factorial_not_recursive power square
+
+all: $(BINARY)
 
 factorial: factorial.o
 	$(LD) -o $@ $? $(LDLIBS)
@@ -27,6 +29,6 @@ square: square.o square_test.o
 
 
 clean:
-	-rm -rf *.o factorial factorial_not_recursive power square 
+	-rm -rf *.o $(BINARY)
 
 .PHONEY: clean all
