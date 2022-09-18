@@ -1,7 +1,7 @@
 ASFLAGS=-gstabs -32
 LDLIBS=-m elf_i386
 
-BINARY = write-record read-record add-year largest-age
+BINARY = write-record read-record add-year largest-age smallest-age
 
 all: $(BINARY)
 
@@ -17,6 +17,8 @@ add-year: read-record.o write-record.o add-year.o
 largest-age: read-record.o largest-age.o
 	$(LD) -o $@ $? $(LDLIBS)
 
+smallest-age: read-record.o smallest-age.o
+	$(LD) -o $@ $? $(LDLIBS)
 
 % : %.s
 # the default rule calls $(CC) but that's not what we want right now
