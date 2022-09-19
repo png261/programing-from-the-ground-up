@@ -78,10 +78,11 @@ systemcall: # calling this insted of int $LINUX_SYSCALL to check error
 
 print_error:
     movl $SYS_WRITE, %eax
-    movl $STDOUT, %ebx
+    movl $STDERR, %ebx
     movl $ERR_STR, %ecx
     movl $ERR_STR_LEN, %edx
     int $LINUX_SYSCALL
+
     movl $SYS_EXIT, %eax
     movl $1, %ebx
     int $LINUX_SYSCALL
