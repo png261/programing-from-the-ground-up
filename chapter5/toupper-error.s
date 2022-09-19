@@ -22,9 +22,10 @@
 
 
 .section .data
-.equ ERR_STR_LEN, 100
 ERR_STR:
-    .string "Oops! Something went wrong!\n"
+    .ascii "Oops! Something went wrong!\n\0"
+    ERR_STR_END:
+.equ ERR_STR_LEN, ERR_STR_END - ERR_STR
 
 ### CONSTANTS ###
 
