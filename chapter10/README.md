@@ -348,6 +348,10 @@ the result here can be compared to 1 to determine if the second bit was set to
 	  order, it's the _bytes_!
      
 ## Use the concepts
+### 1. Modify the integer2string code to return results in octal:
+   you only need to change base number to 8: integer-to-string-octal.s
+### 2. Modify the integer2string code so that the conversion base is a parameter rather than hardcoded: 
+    integer-to-string-parameter.s
 ## Going further
 
 </details>
