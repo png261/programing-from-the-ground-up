@@ -36,7 +36,7 @@
 .type integer2string, @function
 
 integer2string:
-    push %ebp
+    pushl %ebp
     movl %esp, %ebp
 
     movl $0, %ecx               # char count
