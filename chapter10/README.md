@@ -2,6 +2,7 @@
 
 <details>
 <summary>Notes</summary>
+
 # Notes
 
 # Counting
@@ -201,51 +202,55 @@ negative of 00000001:
 # Review
 ## Know the concepts
 ### 1. Convert decimal number 5294 to binary
-5294 / 2 = 2647 R=0
-2647 / 2 = 1323 R=1
-1323 / 2 = 661  R=1
-661  / 2 = 330  R=1
-330  / 2 = 165  R=0
-165  / 2 = 82   R=1
-82   / 2 = 41   R=0
-41   / 2 = 20   R=1
-20   / 2 = 10   R=0
-10   / 2 = 5    R=0
-5    / 2 = 2    R=1
-2    / 2 = 1    R=0
-1    / 2 = 0    R=1
 
-=> 0001 0100 1010 1110
+    5294 / 2 = 2647 R=0
+    2647 / 2 = 1323 R=1
+    1323 / 2 = 661  R=1
+    661  / 2 = 330  R=1
+    330  / 2 = 165  R=0
+    165  / 2 = 82   R=1
+    82   / 2 = 41   R=0
+    41   / 2 = 20   R=1
+    20   / 2 = 10   R=0
+    10   / 2 = 5    R=0
+    5    / 2 = 2    R=1
+    2    / 2 = 1    R=0
+    1    / 2 = 0    R=1
+
+    => 0001 0100 1010 1110
 
 ### 2. What number does 0x0234aeff represent? Specify in binary, octal, and decimal.
 - this number is hexadecimal numbers(base 16)
- 
-0x 0234aeff
+``` 
+    0x 0234aeff
 
-decimal: base 10
-    = 0*16^7 ++ 2*16^6 + 3*16^5 + 4*16^4 + a*16^3 + e*16^2 + f*16^1 + f*16^0 
-    = 0*16^7 + 2*16^6 + 3*16^5 + 4*16^4 + 10*16^3 + 14*16^2 + 15*16^1 + 15*16^0 
-    = 37007103 
-    
-binary: base 2
-    =    0    2    3    4    a      e    f     f  
-    =    0    2    3    4    10    14    15    15 
-    = 0000 0010 0011 0100  1010  1110  1111  1111 
-    
-octal: base 8
-    = 0000 0010 0011 0100  1010  1110  1111  1111 
-    = 00000010001101001010111011111111 
-    = 00 000 010 001 101 001 010 111 011 111 111 
-    =  0   0   2   1   5   1   2   7   3   7   7
+    decimal: base 10
+        = 0*16^7 ++ 2*16^6 + 3*16^5 + 4*16^4 + a*16^3 + e*16^2 + f*16^1 + f*16^0 
+        = 0*16^7 + 2*16^6 + 3*16^5 + 4*16^4 + 10*16^3 + 14*16^2 + 15*16^1 + 15*16^0 
+        = 37007103 
+        
+    binary: base 2
+        =    0    2    3    4    a      e    f     f  
+        =    0    2    3    4    10    14    15    15 
+        = 0000 0010 0011 0100  1010  1110  1111  1111 
+        
+    octal: base 8
+        = 0000 0010 0011 0100  1010  1110  1111  1111 
+        = 00000010001101001010111011111111 
+        = 00 000 010 001 101 001 010 111 011 111 111 
+        =  0   0   2   1   5   1   2   7   3   7   7
+``` 
 
 ### 3. Add the binary numbers 10111001 and 101011
-
-10111001 ADD
-00101011
--------
-11100100
+```
+      10111001
+    + 00101011
+      --------
+      11100100
+```
 
 ### 4. Multiply the binary numbers 1100 1010110
+```
     1010110
     x  1100
     -------
@@ -255,62 +260,77 @@ octal: base 8
  1010110
 ------------ 
 10000001000
+```
 
 ### 5. convert the result of the previous two problems into decimal
-11100100
-= 2^7 + 2^6 + 2^5 + 2^2 
-= 228
+```
+    11100100
+    = 2^7 + 2^6 + 2^5 + 2^2 
+    = 228
 
-10000000100
-= 2^10 + 2^3
-= 1032
-
+    10000000100
+    = 2^10 + 2^3
+    = 1032
+```
 ### 6. Descride how AND, OR, NOT and XOR work.
 - AND returns true only if both inputs are true:
+```
     & 0 1
     ------
     0 0 0
     1 0 1
+```
 - OR returns true if either or both inputs are true:
+```
     | 0 1
     -----
     0 0 0
     1 0 1
+```
 - NOT returns true if the input is false or false if the input is
   true:
+```
     ~ 0 1
     -----
       1 0
+```
 - XOR returns true if either one input or the other is true, but not
   both:
+```
     ^ 0 1
     -----
     0 0 1
     1 1 0
+```
 
 ### 7. What is masking for?
 - masking is for eliminating everything we don't want
 - it is accomplished by doing an and with a number that has the bits we are interested set to 1.
 - e.g: to determine if the second bit is set in the number 1010:
+```
     1010 >> 1 = 0101
  
     0101
   & 0001
     ----
     0001
- 
+```
+
 the result here can be compared to 1 to determine if the second bit was set to
 1 or 0  
 
 ### 8. What number would you use for the flags for the open system call if you wanted to open file for writing, and create the file if it doesn't exist?
 - the flags to use are O_WRONLY | O_CREAT
+```
     0000 0001
   | 0100 0000
   ------------
     0100 0001
   = 65 = 0101 = 0x41
+```
 
 ### 9. How would you represent -55 in a thirty-two bit register?
+```
     55: 
     convert with the faster way:
     1  3 6 13 27 55
@@ -326,8 +346,9 @@ the result here can be compared to 1 to determine if the second bit was set to
     + 0000 0000 0000 0000 0000 0000 0000 0001 
     ------------------------------------------
       1111 1111 1111 1111 1111 1111 1100 1001
-    
-### 10. Sign-extend the previous quantity into a 64-bit register
+```
+
+### 10. Sign-extend the previous quantity into a 64-bit register 
 	1111 1111 1111 1111 1111 1111 1111 1111 1111 1111 1111 1111 1111 1111 1100 1001
     
 ### 11. Describe the difference between little-endian and big-endian storage of words in memory
