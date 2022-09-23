@@ -374,5 +374,16 @@ the result here can be compared to 1 to determine if the second bit was set to
 ### 2. Modify the integer2string code so that the conversion base is a parameter rather than hardcoded: 
     integer-to-string-parameter.s
 ## Going further
+### 1. Modify the integer2string code so that the conversion base can be greater than 10(this requires you to use letters for numbers past 9) 
+integer-to-string-plus.s
+
+### 2. Create function that does the reverse of integer2string called number2integer...
+number2integer.s
+number2integer-test.s
+
+### 3. Write program that stores likes and dislike into a single machine word, and then compares two sets of likes and displikes for commonalitites. 
+
+### 4. Write a program that reads a string of characters from STDIN and converts them to a number
+std-number.s
 
 </details>
