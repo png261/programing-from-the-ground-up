@@ -12,19 +12,19 @@
 .globl _start
 _start:
     # power(2, 3)
-    pushl $0
+    pushl $3
     pushl $2
     call power
-
     addl $8, %esp
+
     pushl %eax
 
     # power(5, 2)
-    pushl $0
+    pushl $2
     pushl $5
     call power
-
     addl $8, %esp
+
     popl %ebx
     addl %eax, %ebx
 
@@ -48,16 +48,15 @@ power:
 
     movl 8(%ebp), %ebx # first parameter: base
     movl 12(%ebp), %ecx # second parameter: power
+    movl %ebx, -4(%ebp)
 
     # if power == 0 return 1
     cmpl $0, %ecx
-    je zero_power
+    jg power_loop_start
 
     zero_power:
         movl $1, -4(%ebp)
         jmp end_power
-
-    movl %ebx, -4(%ebp)
 
     power_loop_start:
         cmpl $1, %ecx
